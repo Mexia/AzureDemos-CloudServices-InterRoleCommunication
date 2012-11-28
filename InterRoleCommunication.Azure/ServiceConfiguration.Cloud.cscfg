@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="InterRoleCommunication.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2012-05.1.7">
+  <Role name="InterRoleCommunicationWebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[YOUR_STORAGE_NAME];AccountKey=[YOUR_STORAGE_KEY]" />
+      <Setting name="TargetWorkerRoleHostName" value="http://SydCampInterRoleCommunication.cloudapp.net:10100/" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="ben" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEFijC6AdesuCQ889JhTA3zkwDQYJKoZIhvcNAQEBBQAEggEARfyEKMZTAo/TDKD+T9ZAPIM/NJIqNCtHvzXUqSwXNSn9mjun8GCZa42X4wLbj9WB9UMcxnLM7DU02XzY8SOEIUOkpRW2ahLE+mpBHAdQWzJdEA1GYGEffZKajc7LKLbgSmRsNh3EMc6uXMfagr/3BsBO2MnQ16fqkoL+3yapPSg6jZtLmvyJXpzMaEqFBeueFg5fZOAw8xG5aayhgHRdTJv7/U0efS2jPfkTzX5DxVLPPff6nn1KkdTuT0tzmje0MjN9Dj8M0DIylMihFW4qq4ar5CmI9VZP02E2dPfeDm0lt6758841+9QVeAcTrAvEJCxX+VcuGAJlW/6bQaQomzAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECEL1rSs/lZtKgBD3VhoSKFa6jOl3z+TtQSss" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2013-09-23T23:59:59.0000000+10:00" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="BEF61E09A33C654F4CB5268EC83CF2D9F8B6F290" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+  <Role name="InterRoleCommunicationWorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=thepit;AccountKey=S99INr8fcbi6IZEPyp2OBtv+w5t6T5fCrbyA8hDpMcB8iupfZOGJTYNlXWQ7hjGuZk3MIo4ImNaqVV5CUUj8Vg==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="ben" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEFijC6AdesuCQ889JhTA3zkwDQYJKoZIhvcNAQEBBQAEggEARfyEKMZTAo/TDKD+T9ZAPIM/NJIqNCtHvzXUqSwXNSn9mjun8GCZa42X4wLbj9WB9UMcxnLM7DU02XzY8SOEIUOkpRW2ahLE+mpBHAdQWzJdEA1GYGEffZKajc7LKLbgSmRsNh3EMc6uXMfagr/3BsBO2MnQ16fqkoL+3yapPSg6jZtLmvyJXpzMaEqFBeueFg5fZOAw8xG5aayhgHRdTJv7/U0efS2jPfkTzX5DxVLPPff6nn1KkdTuT0tzmje0MjN9Dj8M0DIylMihFW4qq4ar5CmI9VZP02E2dPfeDm0lt6758841+9QVeAcTrAvEJCxX+VcuGAJlW/6bQaQomzAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECEL1rSs/lZtKgBD3VhoSKFa6jOl3z+TtQSss" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2013-09-23T23:59:59.0000000+10:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+      <Setting name="DataConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[YOUR_STORAGE_NAME];AccountKey=[YOUR_STORAGE_KEY]" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="BEF61E09A33C654F4CB5268EC83CF2D9F8B6F290" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>
